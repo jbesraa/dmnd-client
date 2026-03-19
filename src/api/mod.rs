@@ -28,7 +28,6 @@ pub(crate) async fn start(router: Router, stats_sender: StatsSender) {
 
     let api_server_port = crate::config::Configuration::api_server_port();
     let api_server_addr = format!("0.0.0.0:{api_server_port}");
-    let api_server_addr = format!("0.0.0.0:{}", api_server_port);
     let listener = tokio::net::TcpListener::bind(api_server_addr)
         .await
         .expect("Invalid server address");
